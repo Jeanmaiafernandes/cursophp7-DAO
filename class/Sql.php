@@ -9,7 +9,7 @@ class Sql extends PDO {
         $this->conn = new PDO("mysql:host=localhost;dbname=dbphp7", "root", "");
 
     }
-
+    
     private function setParams($statement, $parameters = array()) {
 
         foreach ($parameters as $key => $value) {
@@ -38,8 +38,7 @@ class Sql extends PDO {
 
     }
 
-    public function select($rawQuery, $params = array()):array
-    {
+    public function select($rawQuery, $params = array()):array{
 
         $stmt = $this->runQuery($rawQuery, $params);
 
